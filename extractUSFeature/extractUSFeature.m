@@ -1,9 +1,8 @@
 % clear
 % clc
 
-function Feature=exactUSFeature(data_path,trial_num,motion_num,holdtime_per_action,resttime_per_action,headtime,tailtime,resttime_per_trial)
+function Feature=extract(data_path,trial_num,motion_num,holdtime_per_action,resttime_per_action,headtime,tailtime,resttime_per_trial)
 tic %tic和toc是用来记录matlab命令执行的时间
-% data_path = "../data/ZYD0621/TFT/US_test_fatigued3.txt";
 %ExFeature需要使用这些全局变量
 global sampling_freq sample_length channel_num sample_depth sound_speed zero_delay frame_rate
 %% Experiment & Data processing parameters
@@ -13,8 +12,8 @@ totaltime_per_action = holdtime_per_action + resttime_per_action;
 coretime_per_action = holdtime_per_action - headtime - tailtime; %second  每个动作的实际有效数据时间
 totaltime_per_trial = totaltime_per_action * motion_num + resttime_per_trial;
 win_length = 20; %特征提取窗长
-start_channel =5;
-end_channel =8;
+start_channel =1;
+end_channel =4;
 
 %% Ultrasound device parameters
 sample_dots = 1000;
