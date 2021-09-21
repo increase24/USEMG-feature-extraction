@@ -1,23 +1,23 @@
 clc
 clear
-path_allData=dir('../../dataset/usemg/S7/*.txt');
+path_allData=dir('../dataset/S1/AUS/*.txt');
 for i=1:8 %8 motions
-    index=2*i;
+    index=i;
     path_data=path_allData(index).name;
     path_folder=path_allData(index).folder;
-    %rawEMG=importdata(string(path_allData(index).folder)+"/"+string(path_allData(index).name)); %¼¡µçÐÅºÅ£¬ÓÐÐ§Í¨µÀÎª5~8
-    path_US=string(path_allData(index).folder)+"/"+string(path_allData(index).name); %³¬ÉùÐÅºÅ£¬ÓÐÐ§Í¨µÀÎª5~8
+    %rawEMG=importdata(string(path_allData(index).folder)+"/"+string(path_allData(index).name)); %ï¿½ï¿½ï¿½ï¿½ï¿½ÅºÅ£ï¿½ï¿½ï¿½Ð§Í¨ï¿½ï¿½Îª5~8
+    path_US=string(path_allData(index).folder)+"/"+string(path_allData(index).name); %ï¿½ï¿½ï¿½ï¿½ï¿½ÅºÅ£ï¿½ï¿½ï¿½Ð§Í¨ï¿½ï¿½Îª5~8
 %%   exactUSFeature Parameter:
 %     path_US; 
-%     trial_num;trialÊýÄ¿£¬Ã¿¸ötrial°üº¬¶à¸ö¶¯×÷
-%     motion_num:¶¯×÷µÄÖÖÀà
-%     holdtime_per_action:Ã¿¸ö¶¯×÷³ÖÐøµÄÊ±¼ä
-%     resttime_per_action:%Ã¿¸ö¶¯×÷ÖÐ¼äÈç¹ûÓÐ¼ä¸ôµÄÐÝÏ¢Ê±¼ä£¬ÆôÓÃÕâ¸ö²ÎÊý
-%     headtime:È¥µô¹ý¶ÉµÄÊ±¼ä£¨¿ªÍ·£©
-%     tailtime:È¥µô¹ý¶ÉµÄÊ±¼ä£¨½áÎ²£©
-%     resttime_per_trial:%Ã¿¸ötrialÖÐ×îºóµÄÐÝÏ¢Ê±¼ä seconds
+%     trial_num;trialï¿½ï¿½Ä¿ï¿½ï¿½Ã¿ï¿½ï¿½trialï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+%     motion_num:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+%     holdtime_per_action:Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
+%     resttime_per_action:%Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¼ï¿½ï¿½ï¿½ï¿½ï¿½Ð¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢Ê±ï¿½ä£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+%     headtime:È¥ï¿½ï¿½ï¿½ï¿½ï¿½Éµï¿½Ê±ï¿½ä£¨ï¿½ï¿½Í·ï¿½ï¿½
+%     tailtime:È¥ï¿½ï¿½ï¿½ï¿½ï¿½Éµï¿½Ê±ï¿½ä£¨ï¿½ï¿½Î²ï¿½ï¿½
+%     resttime_per_trial:%Ã¿ï¿½ï¿½trialï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢Ê±ï¿½ï¿½ seconds
     USFeature=exactUSFeature(path_US,1,33,10,0,0,0,0);
-    %½«emgFeature±£´æÎªcsv
+    %ï¿½ï¿½emgFeatureï¿½ï¿½ï¿½ï¿½Îªcsv
     save_name="Feature_"+path_data;
-    csvwrite("../../featureset/usemg/S7/"+save_name,USFeature)
+    csvwrite("../dataset/S1/AUS/"+save_name,USFeature)
 end

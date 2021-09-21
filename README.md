@@ -17,7 +17,10 @@ TD-AR6 features are employed as the sEMG feature and MSD features are employed a
 The codes are running with Matlab 2017b on Windows 10.
 
 ## Data preparing
-We apply one sEMG sample and one AUS sample for code testing, which can be downloaded from:
+We provide the sEMG samples and AUS samples of one subject for code testing, which can be downloaded from:
+
+*   [Baidu Disk](https://pan.baidu.com/s/1Tc9Y6TTDm7xjjOsoLFioqA) (code: pyc4).
+
 
 ## Usage
 
